@@ -1,6 +1,6 @@
 #/bin/bash
 echo "executed at"
-echo (date)
+echo $(date)
 
 echo "enter name ..."
 read USER_NAME
