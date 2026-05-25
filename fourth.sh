@@ -24,11 +24,11 @@ fi
 for package in $@
 do
     echo "$TIMESTAMP [INFO] Installing $package"
-    #dnf list installed $package &>> $LOGS_FILE
-    #if [ $? -ne 0 ]; then
-    #    dnf install $package -y &>> $LOGS_FILE
+    dnf list installed nginx
+    if [ $? -ne 0 ]; then
+       dnf install $package -y &>> $LOGS_FILE
         
-    #else
-    #    echo -e "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $N"
-    #fi
+    else
+        echo -e "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $N"
+    fi
 done
